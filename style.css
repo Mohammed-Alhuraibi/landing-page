@@ -1,0 +1,438 @@
+
+
+/* gloable properties  */
+
+:root{
+    --overlay-black:rgba(0, 0, 0, 0.5);
+    --paragraph-color:#C0C5CD;
+    --some-sections-background-color-whitey:#E3E8F8;
+    --hr-line-color:#280A67;
+    --some-sections-background-color-purble:#3E588F;
+
+
+}
+*{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+html{
+    box-sizing: border-box;
+}
+video{
+    display: none;
+    width: 0;
+    height: 0;
+
+}
+
+
+/***********************************     MOBILE FIRST     ************************************ */
+
+/*=========== Hero secton(mobile)  =================*/
+#header {
+    background: url(/images/hero-mobile-view.jpg) no-repeat center/cover fixed;
+    height: 100vh;
+}
+
+#header .overlay-black{
+    height: 100%;
+    width: 100%;
+    background: var(--overlay-black);
+}
+
+
+#header #header-img{
+    max-width: 60px;
+    max-height: 60px; 
+    cursor: pointer;
+    border-radius: 100%;
+    margin-left: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#header .nav-bar-all{
+    text-align: left;
+    width: 100%;
+    z-index: 999;
+    background-color: var(--overlay-black); 
+    position: fixed;
+
+}
+#header .nav-toggle{
+    display: none;
+    width: 100%;
+}
+#header .nav-toggle:checked ~ #nav-bar{
+    /* display: block; */
+    transform: scale(1,1);
+    transition: opacity 250ms ease-in-out 250ms;
+
+}
+#header .nav-toggle:checked ~ #nav-bar a{
+    opacity: 1;
+}
+#header .nav-toggle-label{
+    position:absolute;
+    right: 0;
+    top: 0;
+    margin-right: 1em;
+    /* border: 3px solid red; */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#header .nav-toggle-label span,
+#header .nav-toggle-label::before,
+#header .nav-toggle-label::after{
+    position: relative;
+    display: block;
+    width: 2.5em;
+    background-color: white;
+    height: 5px;
+    border-radius: 5px;
+}
+#header .nav-toggle-label::before,
+#header .nav-toggle-label::after{
+    content: '';
+    position: absolute;
+}
+#header .nav-toggle-label::before{
+    top:30px;
+}
+#header .nav-toggle-label::after{
+    bottom:30px;
+}
+
+#header #nav-bar{
+    position: absolute;
+    text-align: left;
+    background-color: var(--overlay-black);
+    width: 100%;
+    /* display: none; */
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform ease-in-out 200ms;
+
+
+
+}
+#header #nav-bar ul{
+    list-style: none;
+    padding-left: 2em;
+
+}
+
+#header #nav-bar ul li{
+    /* display: inline-block; */
+    margin-bottom: 1em;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.5rem;
+}
+
+#header #nav-bar a{
+    text-decoration: none;
+    color: antiquewhite;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+
+}
+#header #nav-bar a{
+    transition: text-decoration ease-in 250ms;
+}
+
+#header #nav-bar a:hover{
+    text-decoration: underline blue 2px; 
+
+}
+.content-hero {
+    height: 100vh;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 5em;
+    /* border: 2px red solid; */
+    font-family: "Noto Serif", serif;
+    padding-right: 2em;
+    padding-left: 2.5em;
+    color: white;
+}
+.content-hero h1{
+    padding-top: 4em;
+}
+
+.overlay-black .content-hero p{
+    color:var(--paragraph-color);
+    line-height: 1.4rem;
+}
+
+
+/*=========== Features Section(mobile)  =================*/
+#features-section{
+    background-color: var(--some-sections-background-color);
+    height: fit-content;
+    width: 100%;
+}
+.headers-texts{
+    padding:45px 12px 0;
+    text-align: center;
+}
+.hr-line{
+    margin-top: 14px;
+    border: 2px solid var(--hr-line-color);
+    width: 86%;
+    margin-left:  auto;
+    margin-right: auto;
+        margin-bottom: 2em;
+
+
+}
+.flexbox-container{
+    display: flex;
+    height:86%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: solid black 3px; */
+}
+.items{
+    /* border: blueviolet solid 3px; */
+    padding-left: 30px;
+    padding-right: 20px;
+}
+#features-section .items img{
+    height: 60px;
+    width: 60px;
+    /* border: 2px blue solid; */
+    float: left;
+}
+#features-section .items h4, #features-section .items p{
+    padding-left:90px;
+    padding-top: 14px;
+    padding-right: 30px;
+}
+
+#features-section .flexbox-item-3{
+    padding-bottom: 2em;
+
+}
+br{
+    display: none;
+}
+
+/*=========== People Reviews Section(mobile)  =================*/
+#people-review-section{
+    width: 100%;
+    height: 100vh;
+    background-color: var(--some-sections-background-color-purble);
+}
+#people-review-section .headers-texts{
+    color: white;
+}
+#people-review-section .hr-line{
+    border: 2px solid white;
+}
+#people-review-section #video{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em ;
+    width: 23em;
+}
+
+/*=========== Get a discount Section(mobile)  =================*/
+#get-dicount-section{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--some-sections-background-color-whitey);
+}
+#get-dicount-section #form{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 2px solid black; */
+    height: 80%;
+}
+#get-dicount-section #form div{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3em;
+}
+
+#get-dicount-section #email,#submit{
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    border-radius: 10px;
+}
+
+#get-dicount-section #form div #email{
+    width: 317px;
+    height: 41px;
+    color:black;
+    width: 317px;
+    height: 41px;
+    font-size: 1.3em;
+    padding-left: 0.3em;
+}
+#get-dicount-section #form div #submit{
+    background: #60FE53;
+    width: 241px;
+    height: 34px;
+    color: white;
+    font-size: 1em;
+}
+
+/*=========== Footer Section(mobile)  =================*/
+
+#footer{
+    background-color: var(--some-sections-background-color-purble);
+    height: 15vh;
+}
+#footer .copyright-stuff{
+    display: flex;
+    justify-content: center;
+    padding-top: 1em;
+    color: white;
+}
+#footer .copyright-stuff img{
+    width: 15px;
+    height: 15px;
+}
+#footer .soctial-me {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em auto;
+
+}
+#footer .soctial-me img{
+    height: 20px;
+    width: 20px;
+
+}
+
+/***********************************     DESKTOP VIEW     ************************************ */
+
+
+@media (min-width:600px) {
+    /* *****************Hero Section */
+    #header{
+        background: url(/images/desktop_hero_img.jpg) no-repeat center/cover fixed;
+        height: 100vh;
+    }
+    #header .nav-bar-all{
+        
+        display: grid;
+        grid-template-columns: 1fr auto minmax(500px, 3fr) 1fr;
+    }
+    #header .nav-toggle-label{
+        display: none;
+    }
+
+    .logo{
+        grid-column: 2/ span 1;
+
+    }
+    #header #nav-bar{
+        position:unset;
+        /* border: solid red 2px; */
+        background-color: unset;
+        grid-column: 3/span 1;
+        display: flex;
+        align-self: center;
+        justify-content: flex-end;  
+        transform: unset;
+    }
+    #header #nav-bar a{
+        opacity: 1;
+    }
+
+    #header #nav-bar ul{
+        /* border: solid blue 1px ; */
+        margin-right: 1em;
+        display: flex;
+        justify-content: flex-end;
+    }
+    #header #nav-bar ul li{
+        margin:0;
+        padding: 0;
+        margin-left: 1em;
+        font-size: 1.2rem;
+    }
+    /* #header #nav-bar a {
+        opacity: 1;
+    } */
+    .content-hero {
+        padding-right: 1em;
+        padding-left: 3em;
+        color: white;
+    }
+
+    .content-hero p{
+        padding-right: 3em;
+        color:var(--paragraph-color);
+        font-weight: 800;
+    }
+
+    
+ 
+
+
+    /*=========== Features Section(desktop)  =================*/
+
+
+     .headers-texts{
+        padding:auto 0;
+        font-size: 2.5rem;
+    }
+    .items{
+        /* border: blueviolet solid 3px; */
+        padding-left: 50px;
+        margin-top: 2em;
+    }
+    
+    #features-section .items img{
+        height: 100px;
+        width: 100px;
+        /* border: 2px blue solid; */
+        float: left;
+    }
+    #features-section .items h4, #features-section .items p{
+        padding-left:200px;
+        padding-top: 14px;
+        font-size: 1.5rem;
+    }
+    br{
+        display: block;
+    }
+
+    /*=========== People review(desktop)  =================*/
+    #people-review-section #video{
+        width: unset;
+    }
+
+    /*=========== Get a Discount(desktop)  =================*/
+
+
+    #get-dicount-section #form div #email{
+        width: 15em;
+        height: 2em;
+        font-size: 2em;
+        padding-left: 0.3em;
+    }
+    #get-dicount-section #form div #submit{
+        width: 9em;
+        height: 1.5em;
+        font-size: 2em;
+        margin-top: 0ز5em;
+    }
+    
+}
+
+
+
+
+
